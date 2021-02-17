@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Brave Woman</string>
+    <!--ctrl + /-->
+    <!--    Uso general-->
+    <string name="ing_correo">Correo Electronico</string>
+    <string name="ing_password">Contraseña</string>
+
+    <!--    activity_login-->
+    <string name="saludo_LogIn">¡Hola! Es un gusto tenerte de regreso</string>
+    <string name="instruciones_LogIn">Completa los campos para iniciar sesion</string>
+    <string name="btnRecuperPassword">¿Olvido su contraseña?</string>
+    <string name="btnIniciar">Iniciar</string>
+    <string name="btnNoTengoCuenta">¿Nuevo Usuario? Registrate</string>
+
+    <!--    activity_sing_up-->
+    <string name="bienvenida_SignUp">¡Hola! Es un gusto poder contar contigo</string>
+    <string name="instruciones_SignUp">Completa los campos para poder registarte</string>
+    <string name="btnRegistrarse">Registrarme</string>
+    <string name="btnTengoCuenta">¿Ya tienes una cuenta? Inicia sesion</string>
+
+    <!--    activity_main-->
+    <string name="descbtnmenu">Boton para el menu lateral</string>
+    <string name="desxbtnCarritoCompras">Btoton para acceder al carrito de compras</string>
+    <string name="buscar">Buscar</string>
+    <string name="descbtnBuscar">Boton para iniciar la busqueda de lo que se tenga en el textview de alado</string>
+    <string name="vertodoBtn">Ver Todo</string>
+
+    <!--    activity_verificacion_de_cuenta-->
+    <string name="alertVerificacion">Cuenta no verificada</string>
+    <string name="mensajeVerificacion">Para verificar la cuenta de correo electronico que proporcionaste, te enviaremos un correo para poder verificar que la cuenta te pertenezca</string>
+    <string name="preguntaEnviarCorreo">¿Enviar correo ahora?</string>
+    <string name="btnEnviarcorreo">Enviar</string>
+    <string name="masInfo">Para mas informacion:</string>
+    <string name="btnTerCon">Terminos y condiciones</string>
+    <string name="btnPoliticas">Politicas de privacidad</string>
+    <string name="avisoActualizarinfo">Si tu verificaste tu cuenta en tu correo presiona el boton Actualizar</string>
+    <string name="btnActualizar">Actualizar</string>
+    <string name="btnContinuar">Continuar</string>
+
+    <!--    list_publicaciones-->
+    <string name="desImage">Image principal de la publicacion</string>
+    <string name="NomProducto">Nombre del producto</string>
+    <string name="NomTienda">Nombre de la tienda que lo ofrece</string>
+    <string name="precio">$ Precio</string>
+
+    <!--    menu_header-->
+    <string name="esloganApp">Eslogan de la app</string>
+
+    <!--Main menu res/menu/main_menu.xml-->
+    <string name="homeTitulo">Home</string>
+    <string name="perfilTitulo">Perfil</string>
+    <string name="perfil1.1">Mi Perfil</string>
+    <string name="perfil1.2">Mi Negocio</string>
+    <string name="servBWTitulo">Contenido de Brave Woman</string>
+    <string name="servProductos">Productos</string>
+    <string name="servTalleres">Talleres</string>
+    <string name="servAsoIns">Asociaciones e Instituciones</string>
+    <string name="ajustesTitle">Ajustes</string>
+    <string name="configuraciones">Configuraciones</string>
+    <string name="logout">Cerrar Sesion</string>
+</resources>
