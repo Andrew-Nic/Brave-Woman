@@ -17,25 +17,24 @@
         app:headerLayout="@layout/menu_header"
         app:menu="@menu/main_menu" />
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/contenidoMainActivity"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <!--    Menu-->
         <RelativeLayout
+            android:id="@+id/barrasuperior"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp">
-
-
+            android:layout_height="?actionBarSize">
             <ImageView
                 android:id="@+id/btnmenu"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
                 android:contentDescription="@string/descbtnmenu"
                 android:src="@drawable/ic_menu" />
 
@@ -43,10 +42,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="10dp"
                 android:layout_toStartOf="@id/CarritoCompras"
                 android:layout_toEndOf="@+id/btnmenu"
-                android:text="@string/app_name" />
+                android:text="@string/app_name"
+                android:fontFamily="@font/roboto_black"
+                android:textSize="25sp"
+                android:textColor="@color/PRINCIPAL"/>
 
             <ImageView
                 android:id="@+id/CarritoCompras"
@@ -54,51 +55,58 @@
                 android:layout_height="30dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
+                android:layout_marginEnd="25dp"
                 android:contentDescription="@string/desxbtnCarritoCompras"
                 android:src="@drawable/ic_baseline_shopping_cart_24" />
-        </RelativeLayout>
-        <!--    Buscador -->
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp">
-
-            <EditText
-                android:id="@+id/Et_Buscar"
-                android:layout_width="300dp"
-                android:layout_height="30dp"
-                android:autofillHints="Buscar"
-                android:background="#B6B6B6"
-                android:hint="@string/buscar"
-                android:inputType="text"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp" />
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="8dp"
-                android:layout_toEndOf="@+id/Et_Buscar"
-                android:background="#ff0000"
-                android:contentDescription="@string/descbtnBuscar"
-                android:src="@drawable/ic_search" />
         </RelativeLayout>
 
         <!--    categorias-->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbarAlwaysDrawVerticalTrack="false">
+            android:scrollbarAlwaysDrawVerticalTrack="false"
+            android:layout_below="@+id/barrasuperior">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:orientation="vertical">
+                <!--    Buscador -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+
+                    <EditText
+                        android:id="@+id/Et_Buscar"
+                        android:layout_width="275dp"
+                        android:layout_height="50dp"
+                        android:autofillHints="Buscar"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/custom_buscador"
+                        android:hint="@string/buscar"
+                        android:textColor="@color/PRINCIPAL"
+                        android:textColorHint="@color/PRINCIPAL"
+                        android:inputType="text"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:fontFamily="@font/roboto_black"
+                        android:textSize="20sp"/>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="35dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="8dp"
+                        android:layout_toEndOf="@+id/Et_Buscar"
+                        android:background="@drawable/custom_button_search"
+                        android:layout_centerInParent="true"
+                        android:contentDescription="@string/descbtnBuscar"
+                        android:src="@drawable/ic_search" />
+                </RelativeLayout>
                 <!-- Productos -->
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -112,7 +120,10 @@
                         android:layout_alignParentStart="true"
                         android:layout_marginStart="20dp"
                         android:layout_toStartOf="@id/verTodoProductos"
-                        android:text="@string/servProductos" />
+                        android:text="@string/servProductos"
+                        android:fontFamily="@font/roboto_black"
+                        android:textSize="20sp"
+                        android:textColor="@color/verde"/>
 
                     <TextView
                         android:id="@+id/verTodoProductos"
@@ -122,14 +133,17 @@
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:text="@string/vertodoBtn" />
+                        android:text="@string/vertodoBtn"
+                        android:fontFamily="@font/roboto_black"
+                        android:textSize="20sp"
+                        android:textColor="@color/verde"/>
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/ReVPublicaciones"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_below="@+id/CategoriaProductos"
-                        android:layout_centerVertical="true" />
+                        android:layout_centerVertical="true"/>
 
                 </RelativeLayout>
                 <!-- Talleres -->
@@ -145,7 +159,10 @@
                         android:layout_alignParentStart="true"
                         android:layout_marginStart="20dp"
                         android:layout_toStartOf="@+id/vertodoTalleres"
-                        android:text="@string/servTalleres" />
+                        android:text="@string/servTalleres"
+                        android:fontFamily="@font/roboto_black"
+                        android:textSize="20sp"
+                        android:textColor="@color/verde"/>
 
                     <TextView
                         android:id="@+id/vertodoTalleres"
@@ -153,21 +170,66 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="10dp"
-                        android:text="@string/vertodoBtn" />
+                        android:text="@string/vertodoBtn"
+                        android:fontFamily="@font/roboto_black"
+                        android:textSize="20sp"
+                        android:textColor="@color/verde"/>
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/ReVTalleres"
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="200dp"
                         android:layout_below="@+id/CategoriaTalleres"
-                        android:layout_centerVertical="true" />
+                        android:layout_margin="20dp"
+                        app:cardBackgroundColor="#DD9A9A"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="10dp"
+                        android:id="@+id/cardTalleres"
+                        android:layout_centerInParent="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/ImgTalleres"
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginEnd="15dp"
+                                android:background="#fff"
+                                android:contentDescription="@string/desTalleres"/>
+                            <RelativeLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/ImgTalleres"
+                                android:layout_centerInParent="true">
+                                <TextView
+                                    android:id="@+id/TituloSeccionTalleres"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/servTalleres"
+                                    android:layout_centerHorizontal="true"/>
+
+                                <TextView
+                                    android:id="@+id/desTall"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="10dp"
+                                    android:text="@string/IntroTalleres"
+                                    android:textAlignment="center"
+                                    android:layout_margin="10dp"/>
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
 
                 </RelativeLayout>
                 <!-- Instituciones -->
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:layout_marginTop="10dp">
+                    android:layout_height="300dp">
 
                     <TextView
                         android:id="@+id/CategoriaIntituciones"
@@ -176,7 +238,10 @@
                         android:layout_alignParentStart="true"
                         android:layout_marginStart="20dp"
                         android:layout_toStartOf="@+id/verTodoAsoInst"
-                        android:text="@string/servAsoIns" />
+                        android:text="@string/servAsoIns"
+                        android:fontFamily="@font/roboto_black"
+                        android:textSize="20sp"
+                        android:textColor="@color/verde"/>
 
                     <TextView
                         android:id="@+id/verTodoAsoInst"
@@ -184,21 +249,79 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="10dp"
-                        android:text="@string/vertodoBtn" />
+                        android:text="@string/vertodoBtn"
+                        android:fontFamily="@font/roboto_black"
+                        android:textSize="20sp"
+                        android:textColor="@color/verde"/>
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/ReVInstituciones"
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/CardAsoIns"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="200dp"
                         android:layout_below="@+id/CategoriaIntituciones"
-                        android:layout_centerVertical="true"
-                        android:layout_marginTop="4dp" />
+                        android:layout_margin="20dp"
+                        app:cardBackgroundColor="#DD9A9A"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="10dp"
+                        android:layout_centerInParent="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/ImgInst"
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginEnd="15dp"
+                                android:background="#fff"
+                                android:contentDescription="@string/desTalleres"/>
+                            <RelativeLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/ImgInst"
+                                android:layout_centerInParent="true">
+                                <TextView
+                                    android:id="@+id/TituloSeccionInst"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/servAsoIns"
+                                    android:layout_centerHorizontal="true"/>
+
+                                <TextView
+                                    android:id="@+id/desInst"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="10dp"
+                                    android:text="@string/IntroAsoIns"
+                                    android:textAlignment="center"
+                                    android:layout_below="@+id/TituloSeccionInst"
+                                    android:layout_margin="10dp"/>
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
                 </RelativeLayout>
             </LinearLayout>
 
         </ScrollView>
 
-    </LinearLayout>
+<!--        menu navigation -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottom_Navigation"
+            app:itemBackground="@color/PRINCIPAL"
+            app:itemTextColor="@drawable/selector"
+            app:itemIconTint="@drawable/selector"
+            app:menu="@menu/menu_navgation"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

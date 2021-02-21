@@ -24,6 +24,9 @@
     <string name="buscar">Buscar</string>
     <string name="descbtnBuscar">Boton para iniciar la busqueda de lo que se tenga en el textview de alado</string>
     <string name="vertodoBtn">Ver Todo</string>
+    <string name="desTalleres">Imagen para presentar los talleres</string>
+    <string name="IntroTalleres">En esta seccion tenemos los talleres mas recientes de todo tipo de tema que le pueda interesar</string>
+    <string name="IntroAsoIns">En esta seccion tenemos las asosiaciones e Intutuciones mas importantes para servir a las mujeres</string>
 
     <!--    activity_verificacion_de_cuenta-->
     <string name="alertVerificacion">Cuenta no verificada</string>
@@ -58,4 +61,13 @@
     <string name="ajustesTitle">Ajustes</string>
     <string name="configuraciones">Configuraciones</string>
     <string name="logout">Cerrar Sesion</string>
+
+    <!--    activity_mi_negocio-->
+    <string name="crearNegocio">Crear Mi negocio</string>
+    <string name="msjCrearNegocio">Aun no has agregado un negocio! deseas agregaro en este momento?</string>
+    <string name="bsnombreNegocio">Nombre del Negocio</string>
+    <string name="bsdescripcion">Description</string>
+
+    <!--    activity_registro_negocio-->
+    <string name="instRegisNegocio">Complete los campos para poder registrar su Negocio</string>
 </resources>

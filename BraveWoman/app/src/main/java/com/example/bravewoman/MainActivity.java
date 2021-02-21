@@ -3,6 +3,8 @@ package com.example.bravewoman;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,8 +16,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,13 +29,15 @@ import com.google.firebase.firestore.Query;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     static final float END_SCALE = 0.7f;
-    LinearLayout contentView;
+    private RelativeLayout contentView;
     private RecyclerView mReVPublicaciones;
-    ImageView mbtnMenu;
+    private ImageView mbtnMenu;
     private FirebaseAuth mAuth;
     private FirebaseUser user;
     private FirebaseFirestore mFirestore;
     private ProductosAdapter adapter;
+    private CardView mCarTal, mCarAso;
+
 
     //drawer menu
     DrawerLayout drawerLayout;
@@ -42,6 +49,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //activity main
         contentView= findViewById(R.id.contenidoMainActivity);
         mReVPublicaciones = findViewById(R.id.ReVPublicaciones);
+        mCarTal = findViewById(R.id.cardTalleres);
+        mCarAso=findViewById(R.id.CardAsoIns);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_Navigation);
         //menu hooks
         drawerLayout=findViewById(R.id.drawer_layout);
         navigationView=findViewById(R.id.nav_view);
@@ -52,25 +62,47 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         user = mAuth.getCurrentUser();
         mFirestore = FirebaseFirestore.getInstance();
 
-
-
         navigationDrawer();
         configurarRecliclerViewProductos();
+        SelecCardT_A();
+
+        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.home:
+                    return true;
+                case R.id.favoritos:
+                    startActivity(new Intent(getApplicationContext(),Favoritos.class));
+                    overridePendingTransition(0,0);
+                    return true;
+                case R.id.tiendas:
+                    startActivity(new Intent(getApplicationContext(),Tiendas.class));
+                    overridePendingTransition(0,0);
+                    return true;
+            }
+            return false;
+        });
+    }
+
+    //card Views de presentacion de los talleres e Intituciones y asosiaciones
+    private void SelecCardT_A(){
+        mCarTal.setOnClickListener(v -> anuncio());
+
+        mCarAso.setOnClickListener(v -> anuncio());
+    }
+    private void anuncio(){
+        Toast.makeText(MainActivity.this, "Proximante...", Toast.LENGTH_SHORT).show();
     }
 
 //    barra de navegacion lateral
     private void navigationDrawer() {
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.home);
-        mbtnMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (drawerLayout.isDrawerVisible(GravityCompat.START)){
-                    drawerLayout.closeDrawer(GravityCompat.START);
-                }else{
-                    drawerLayout.openDrawer(GravityCompat.START);
-                }
+        mbtnMenu.setOnClickListener(v -> {
+            if (drawerLayout.isDrawerVisible(GravityCompat.START)){
+                drawerLayout.closeDrawer(GravityCompat.START);
+            }else{
+                drawerLayout.openDrawer(GravityCompat.START);
             }
         });
 
@@ -111,6 +143,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 mAuth.signOut();
                 startActivity(new Intent(this, Login.class));
                 finish();
+                break;
+            case R.id.mi_negocio:
+                startActivity(new Intent(this,MiNegocio.class));
+                break;
+            case R.id.mi_perfil:
+                startActivity(new Intent(this,MiPerfil.class));
+                break;
+            case R.id.Talleres:
+            case R.id.Aso_Ins:
+                anuncio();
                 break;
         }
         return false;
