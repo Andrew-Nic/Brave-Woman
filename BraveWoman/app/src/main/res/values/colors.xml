@@ -12,4 +12,7 @@
     <color name="PRINCIPAL">#EF9A9A</color>
     <color name="RosaPalido">#f7d1ce</color>
     <color name="verde">#86b485</color>
+
+    <color name="RosaPalidoET">#61F7D1CE</color>
+    <color name="texto">#000</color>
 </resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Brave Woman</string>
+    <string name="app_name">Unided Women</string>
     <!--ctrl + /-->
     <!--    Uso general-->
     <string name="ing_correo">Correo Electronico</string>
@@ -10,13 +10,13 @@
     <string name="instruciones_LogIn">Completa los campos para iniciar sesion</string>
     <string name="btnRecuperPassword">¿Olvido su contraseña?</string>
     <string name="btnIniciar">Iniciar</string>
-    <string name="btnNoTengoCuenta">¿Nuevo Usuario? Registrate</string>
+    <string name="btnNoTengoCuenta">¿No tienes una cuenta? Registrate Aquí</string>
 
     <!--    activity_sing_up-->
-    <string name="bienvenida_SignUp">¡Hola! Es un gusto poder contar contigo</string>
-    <string name="instruciones_SignUp">Completa los campos para poder registarte</string>
-    <string name="btnRegistrarse">Registrarme</string>
-    <string name="btnTengoCuenta">¿Ya tienes una cuenta? Inicia sesion</string>
+    <string name="bienvenida_SignUp">Registro de usuario</string>
+    <string name="instruciones_SignUp">Completa los siguientes campos para poder registrar una cuenta nueva</string>
+    <string name="btnRegistrarse">Aceptar</string>
+    <string name="btnTengoCuenta">¿Ya tienes una cuenta? Ingresar Aquí</string>
 
     <!--    activity_main-->
     <string name="descbtnmenu">Boton para el menu lateral</string>
@@ -26,7 +26,7 @@
     <string name="vertodoBtn">Ver Todo</string>
     <string name="desTalleres">Imagen para presentar los talleres</string>
     <string name="IntroTalleres">En esta seccion tenemos los talleres mas recientes de todo tipo de tema que le pueda interesar</string>
-    <string name="IntroAsoIns">En esta seccion tenemos las asosiaciones e Intutuciones mas importantes para servir a las mujeres</string>
+    <string name="IntroAsoIns">El Instituto Municipal de la Mujer está conformado por un equipo de profesionales que atienden de la mejor manera a las mujeres tekaxeñas, fomentando ambientes de respeto a los derechos humanos y generando mayor conciencia sobre la violencia de género que se vive en la región.</string>
 
     <!--    activity_verificacion_de_cuenta-->
     <string name="alertVerificacion">Cuenta no verificada</string>
@@ -64,10 +64,10 @@
 
     <!--    activity_mi_negocio-->
     <string name="crearNegocio">Crear Mi negocio</string>
-    <string name="msjCrearNegocio">Aun no has agregado un negocio! deseas agregaro en este momento?</string>
+    <string name="msjCrearNegocio">!Aun no has agregado un negocio!, ¿deseas agregarlo en este momento?</string>
     <string name="bsnombreNegocio">Nombre del Negocio</string>
     <string name="bsdescripcion">Description</string>
 
     <!--    activity_registro_negocio-->
-    <string name="instRegisNegocio">Complete los campos para poder registrar su Negocio</string>
+    <string name="instRegisNegocio">Complete los siguientes campos para poder registrar los datos de su negocio</string>
 </resources>

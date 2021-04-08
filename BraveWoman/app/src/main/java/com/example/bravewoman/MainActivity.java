@@ -24,6 +24,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -37,7 +38,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FirebaseFirestore mFirestore;
     private ProductosAdapter adapter;
     private CardView mCarTal, mCarAso;
-
 
     //drawer menu
     DrawerLayout drawerLayout;
@@ -173,6 +173,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mReVPublicaciones.setHasFixedSize(true);
         mReVPublicaciones.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         mReVPublicaciones.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new ProductosAdapter.OnItemClickListener() {
+            @Override
+            public void OnItemClick(DocumentSnapshot documentSnapshot, int position) {
+                String path = documentSnapshot.getReference().getPath();
+               Intent intent = new Intent(MainActivity.this,DetallesProducto.class);
+               intent.putExtra("pathReferenceProducto",path);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -194,6 +204,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onStop();
         adapter.stopListening();
     }
-
-
 }
